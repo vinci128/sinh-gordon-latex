@@ -1,0 +1,54 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{report}
+ 
+
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{braket}
+%
+ 
+
+ 
+\begin{document}
+ 
+
+ 
+\title{Sinh-Gordon model on lattice}
+\author{Vincenzo Afferrante} 
+ 
+\maketitle
+
+\chapter{Introduction} 
+
+Our goal is to simulate  a lattice regularized version of sinh-Gordon model.
+
+\chapter{Analytical Predictions and observables in the continuum }
+
+Calculations of observable quantities have been made for this model. The action found in literature is \begin{equation}
+\mathcal{A} = \int dx^2 \left\lbrace\dfrac{1}{16 \pi} \sum_\nu (\partial_\nu \phi )^2 + 2 \mu \cosh(b \phi) \right\rbrace
+\end{equation}  A notable example is obtained for the quantity $e^{a\phi}$. Namely
+\begin{align}
+\braket{e^{a \phi}} =  &\left[ \dfrac{m\Gamma(\frac{1}{2+2b^2}) \Gamma(1+ \frac{b^2}{2+2b^2}) }{4 \sqrt{\pi}}  \right]^{-2 a^2} \times \nonumber \\ & \exp{\left\lbrace \int_0^\infty \dfrac{dt}{t} \left[ - \dfrac{\sinh^2(2 a b t)}{2 \sinh(b^2t) \sinh(t)\cosh((1+b^2)t) } + 2 a^2 e^{-2t} \right]  \right\rbrace } \,,
+\end{align} where \begin{equation}
+m = \dfrac{4 \sqrt{\pi}}{\Gamma(\frac{1}{2+2b^2})\Gamma(1 +\frac{b^2}{2+2b^2}) } \left[ - \dfrac{\mu \pi \Gamma(1+b^2)}{\Gamma(-b^2)} \right]^{\frac{1}{2+2b^2}} \,.
+\end{equation} The last equation gives the particle mass in the continuum. 
+
+\chapter{Lattice setup}
+
+The lattice action is \begin{equation}
+\mathcal{A} = a^2 \sum_x \left[ \dfrac{N_d}{8 \pi} \phi(x)^2 + \dfrac{1}{8\pi} \sum_\nu \phi(x) \phi(x+\nu) +2 \hat \mu \cosh(b\phi(x)) \right] \,.
+\end{equation} 
+
+
+\chapter{Comparing lattice theory with the continuum }
+
+Simple dimensional analysis show that both the field and the parameter $b$ are dimensionless, while $\mu$ has a dimension 2 in energy. Labelling lattice parameter with an hat, we have $\hat \mu = a^2 \mu$. Naively the continuum is limit is obtained  with $\hat \mu \to 0$. To compare lattice results with the continuum analytic results, we need to find the lines of constant physics.
+
+We can do this using lattice perturbation theory. Calculating the perturbative expansion of the two point function and setting the pole position equal to the mass gives a relation between $ \hat \mu$ and $\hat b$. This can be checked non-perturbatively doing lattice spectroscopy and checking the value of the physical mass obtained.
+ 
+
+ 
+\end{document}
