@@ -20,10 +20,10 @@
 
 Our goal is to simulate  a lattice regularized version of sinh-Gordon model.
 
-\chapter{Properties of Sinh-Gordon model and observables in the continuum }
+\chapter{Properties of Sinh-Gordon model in the continuum }
 
 The sinh-Gordon model has many remarkable properties. It is integrable, has a unique vacuum and the simplest symmetry $Z_2$: $\phi -> -\phi$. The action that defines it is \begin{equation}
-\mathcal{A} = \int d^2x \left\lbrace\dfrac{1}{2 \pi} \sum_\nu (\partial_\nu \phi )^2 + 2 \mu \cosh(b \phi) \right\rbrace
+\mathcal{A} = \int d^2x \left\lbrace\dfrac{1}{2 \pi} \sum_\nu (\partial_\nu \phi )^2 + 2 \mu \cosh(b \phi) \right\rbrace 
 \end{equation} Due to his integrability, the S-matrix is factorizable in 2 particles S-matrix, and it is known analitically \begin{equation}
 S(\theta) = \dfrac{\sinh(\theta) -i \sin (\pi \beta)}{\sinh(\theta) +i \sin (\pi \beta) }
 \end{equation} Here $\theta$ is the rapidity, and it is related to the energy and the momentum by \begin{equation}
@@ -32,6 +32,9 @@ E = m \cosh(\theta) \; ; \; P = m \sinh(\theta)
 \beta(b) =  \dfrac{b^2}{8\pi} \dfrac{1}{1+ b^2/8 \pi} \,.
 \end{equation} This result is obtained by analytic continuation from an analogous calculation in the sine-Gordon model, valid in the "Coleman bound", namely $b < \sqrt{8\pi}$. It is proven that the theory doesn't develop a mass gap over this bound. 
 
+This formula reveals an interesting property, which is not manifest in the Lagrangian, a duality symmetry given by \begin{equation}
+b \to 1/b \; ; \; \beta \to 1- \beta \,.
+\end{equation} This transformation doesn't change the position of the zeroes in the S-matrix.
 
 
 \section{Observables}
@@ -40,13 +43,13 @@ Calculations of observable quantities have been made for this model.   A notable
 \braket{e^{a \phi}} =  &\left[ \dfrac{m\Gamma(\frac{1}{2+2b^2}) \Gamma(1+ \frac{b^2}{2+2b^2}) }{4 \sqrt{\pi}}  \right]^{-2 a^2} \times  \\ & \exp{\left\lbrace \int_0^\infty \dfrac{dt}{t} \left[ - \dfrac{\sinh^2(2 a b t)}{2 \sinh(b^2t) \sinh(t)\cosh((1+b^2)t) } + 2 a^2 e^{-2t} \right]  \right\rbrace } \nonumber \,,
 \end{align} where \begin{equation}
 m = \dfrac{4 \sqrt{\pi}}{\Gamma(\frac{1}{2+2b^2})\Gamma(1 +\frac{b^2}{2+2b^2}) } \left[ - \dfrac{\mu \pi \Gamma(1+b^2)}{\Gamma(-b^2)} \right]^{\frac{1}{2+2b^2}} \,.
-\end{equation} The last equation gives the renormalized particle mass in terms of the bare parameter $\mu$ and the coupling b. 
+\end{equation} The last equation gives the renormalized particle mass in terms of the bare parameter $\mu$ and the coupling b. It is remarkable that this formula don't satisfy the duality symmetry, and that the mass goes to zero for $b=1$ (which is equivalent to the Coleman bound, after the rescaling of $1/8\pi$ of the kinetic term).
 
 \chapter{Lattice setup}
 
 The lattice action is \begin{equation}
-\mathcal{A} = a^2 \sum_x \left[ \dfrac{N_d}{8 \pi} \phi(x)^2 + \dfrac{1}{8\pi} \sum_\nu \phi(x) \phi(x+\nu) +2 \hat \mu \cosh(b\phi(x)) \right] \,.
-\end{equation} 
+\mathcal{A} = a^2 \sum_x \left[ \dfrac{N_d}{8 \pi} \phi(x)^2 + \dfrac{1}{8\pi} \sum_\nu \phi(x) \phi(x+ a \nu) +2  \mu \cosh(b\phi(x)) \right] \,.
+\end{equation} We can absorb $a^2$ in the dimensioned parameter $\mu$ defining $\hat \mu = a^2 \mu$. We simulate the model using the grid code, based on a HMC algorithm.  
 
 
 \chapter{Comparing lattice theory with the continuum }
@@ -54,6 +57,11 @@ The lattice action is \begin{equation}
 Simple dimensional analysis show that both the field and the parameter $b$ are dimensionless, while $\mu$ has a dimension 2 in energy. Labelling lattice parameter with an hat, we have $\hat \mu = a^2 \mu$. Naively the continuum is limit is obtained  with $\hat \mu \to 0$. To compare lattice results with the continuum analytic results, we need to find the lines of constant physics.
 
 We can do this using lattice perturbation theory. Calculating the perturbative expansion of the two point function and setting the pole position equal to the mass gives a relation between $ \hat \mu$ and $\hat b$. This can be checked non-perturbatively doing lattice spectroscopy and checking the value of the physical mass obtained.
+
+The theory has an infinite number of interaction terms \begin{align}
+\mathcal{A} =  \sum_x &\left[ \dfrac{1}{8 \pi} \phi(x)^2 + \dfrac{1}{8\pi} \sum_\nu \phi(x) \phi(x+\nu) +  \dfrac{\hat \mu b^2}{2}\phi(x)^2 \right. \nonumber \\
+  &\left. +   \dfrac{\hat \mu b^4}{4!} \phi(x)^4 + \dfrac{\hat \mu b^6}{6!} \phi(x)^6 + \dots  \right]
+\end{align} which leads to an infinite number of Feynman rules for n-point vertex, with n even.
  
 
  
