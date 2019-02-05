@@ -1,7 +1,6 @@
-
-\documentclass[12pt]{report}
+\documentclass[12pt,a4paper]{report}
  
-
+\usepackage[utf8]{inputenc}
 \usepackage{amsmath,amsthm,amssymb}
 \usepackage{braket}
 
@@ -21,16 +20,27 @@
 
 Our goal is to simulate  a lattice regularized version of sinh-Gordon model.
 
-\chapter{Analytical Predictions and observables in the continuum }
+\chapter{Properties of Sinh-Gordon model and observables in the continuum }
 
-Calculations of observable quantities have been made for this model. The action found in literature is \begin{equation}
-\mathcal{A} = \int d^2x \left\lbrace\dfrac{1}{16 \pi} \sum_\nu (\partial_\nu \phi )^2 + 2 \mu \cosh(b \phi) \right\rbrace
-\end{equation}  A notable example is obtained for the quantity $e^{a\phi}$. Namely
+The sinh-Gordon model has many remarkable properties. It is integrable, has a unique vacuum and the simplest symmetry $Z_2$: $\phi -> -\phi$. The action that defines it is \begin{equation}
+\mathcal{A} = \int d^2x \left\lbrace\dfrac{1}{2 \pi} \sum_\nu (\partial_\nu \phi )^2 + 2 \mu \cosh(b \phi) \right\rbrace
+\end{equation} Due to his integrability, the S-matrix is factorizable in 2 particles S-matrix, and it is known analitically \begin{equation}
+S(\theta) = \dfrac{\sinh(\theta) -i \sin (\pi \beta)}{\sinh(\theta) +i \sin (\pi \beta) }
+\end{equation} Here $\theta$ is the rapidity, and it is related to the energy and the momentum by \begin{equation}
+E = m \cosh(\theta) \; ; \; P = m \sinh(\theta)
+\end{equation} It is introduced the function $\beta(b)$ defined by \begin{equation}
+\beta(b) =  \dfrac{b^2}{8\pi} \dfrac{1}{1+ b^2/8 \pi} \,.
+\end{equation} This result is obtained by analytic continuation from an analogous calculation in the sine-Gordon model, valid in the "Coleman bound", namely $b < \sqrt{8\pi}$. It is proven that the theory doesn't develop a mass gap over this bound. 
+
+
+
+\section{Observables}
+Calculations of observable quantities have been made for this model.   A notable example is obtained for the quantity $e^{a\phi}$. Namely
 \begin{align}
-\braket{e^{a \phi}} =  &\left[ \dfrac{m\Gamma(\frac{1}{2+2b^2}) \Gamma(1+ \frac{b^2}{2+2b^2}) }{4 \sqrt{\pi}}  \right]^{-2 a^2} \times \nonumber \\ & \exp{\left\lbrace \int_0^\infty \dfrac{dt}{t} \left[ - \dfrac{\sinh^2(2 a b t)}{2 \sinh(b^2t) \sinh(t)\cosh((1+b^2)t) } + 2 a^2 e^{-2t} \right]  \right\rbrace } \,,
+\braket{e^{a \phi}} =  &\left[ \dfrac{m\Gamma(\frac{1}{2+2b^2}) \Gamma(1+ \frac{b^2}{2+2b^2}) }{4 \sqrt{\pi}}  \right]^{-2 a^2} \times  \\ & \exp{\left\lbrace \int_0^\infty \dfrac{dt}{t} \left[ - \dfrac{\sinh^2(2 a b t)}{2 \sinh(b^2t) \sinh(t)\cosh((1+b^2)t) } + 2 a^2 e^{-2t} \right]  \right\rbrace } \nonumber \,,
 \end{align} where \begin{equation}
 m = \dfrac{4 \sqrt{\pi}}{\Gamma(\frac{1}{2+2b^2})\Gamma(1 +\frac{b^2}{2+2b^2}) } \left[ - \dfrac{\mu \pi \Gamma(1+b^2)}{\Gamma(-b^2)} \right]^{\frac{1}{2+2b^2}} \,.
-\end{equation} The last equation gives the particle mass in the continuum. 
+\end{equation} The last equation gives the renormalized particle mass in terms of the bare parameter $\mu$ and the coupling b. 
 
 \chapter{Lattice setup}
 
