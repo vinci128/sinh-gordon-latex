@@ -11,7 +11,7 @@
  
 
  
-\title{Sinh-Gordon model on lattice}
+\title{Lattice Sinh-Gordon model }
 \author{Vincenzo Afferrante} 
  
 \maketitle
@@ -59,15 +59,16 @@ Simple dimensional analysis show that both the field and the parameter $b$ are d
 We can do this using lattice perturbation theory. Calculating the perturbative expansion of the two point function and setting the pole position equal to the mass gives a relation between $ \hat \mu$ and $\hat b$. This can be checked non-perturbatively doing lattice spectroscopy and checking the value of the physical mass obtained.
 
 The theory has an infinite number of interaction terms \begin{align}
-\mathcal{A} =  \sum_x &\left[ \dfrac{1}{8 \pi} \phi(x)^2 + \dfrac{1}{8\pi} \sum_\nu \phi(x) \phi(x+\nu) +  \dfrac{\hat \mu b^2}{2}\phi(x)^2 \right. \nonumber \\
-  &\left. +   \dfrac{\hat \mu b^4}{4!} \phi(x)^4 + \dfrac{\hat \mu b^6}{6!} \phi(x)^6 + \dots  \right]
+\mathcal{A} =  \sum_x &\left[ \dfrac{1}{8 \pi} \phi(x)^2 + \dfrac{1}{8\pi} \sum_\nu \phi(x) \phi(x+\nu) +  {\hat \mu b^2}\phi(x)^2 \right. \nonumber \\
+  &\left. +   \dfrac{ 2 \hat \mu b^4}{4!} \phi(x)^4 +  \dfrac{2 \hat \mu b^6}{6!} \phi(x)^6 + \dots  \right]
 \end{align} which leads to an infinite number of Feynman rules for n-point vertex, with n even.
  
  Expanding the two point function in perturbation theory over powers of the couple $b^2$ one obtains \begin{align}
- \hat M^2=& 8 \pi \hat \mu b^2 + 4 \pi \hat \mu b^4 I(\hat \mu)+ \pi \hat \mu b^6 I(\hat \mu)^2 + O(\hat \mu b^8) \\
+ \hat M^2=& 16 \pi \hat \mu b^2 + 8 \pi \hat \mu b^4 I(\hat \mu)+ 2 \pi \hat \mu b^6 I(\hat \mu)^2 + O(\hat \mu b^8) \\
  = & \hat m_0 (1 + \frac{1}{2}b^2 I( \hat \mu) + \frac{1}{8} b^4 I(\hat \mu)^2 ) + O(\hat \mu b^8 )
- \end{align} We have the bare mass $\hat m_0 = 8 \pi \hat \mu b^2 $ and the tadpole integral \begin{equation}
- I(\hat \mu) = \int_{BZ} \dfrac{d^2l}{(2 \pi)^2} \dfrac{1}{\hat{l^2} + \hat \mu }
+ \end{align} We have the bare mass $\hat m_0 = 16 \pi \hat \mu b^2 $ and the tadpole integral \begin{equation}
+ I(\hat \mu) = \int_{BZ} \dfrac{d^2l}{(2 \pi)^2} \dfrac{8 \pi}{\hat{l^2} + 16 \pi \hat \mu b^2
+  }
  \end{equation} where $\hat{l^2} = \hat{l_x}^2 + \hat{l_y}^2$ and $\hat p = 2 \sin (p/2)$.
 
  
