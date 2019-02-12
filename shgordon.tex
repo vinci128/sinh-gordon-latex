@@ -18,7 +18,7 @@
 
 \chapter{Introduction} 
 
-Our goal is to simulate  a lattice regularized version of sinh-Gordon model.
+Our goal is to simulate  a lattice regularized version of sinh-Gordon model. New results obtained with thermodynamical Bether ansatz give interesting properties, but also many dilemma. In principle, the duality of the theory doesn't work with the mass formula, and there is not a single UV behaviour of the theory, but there can be many values of the charge infinity.
 
 \chapter{Properties of Sinh-Gordon model in the continuum }
 
@@ -41,8 +41,10 @@ b \to 1/b \; ; \; \beta \to 1- \beta \,.
 Calculations of observable quantities have been made for this model. 
 The action used in this calculations is \begin{equation}
 \mathcal{A} = \int d^2x  \left\lbrace\dfrac{1}{16 \pi} \sum_\nu (\partial_\nu \phi )^2 + 2 \mu \cosh(b \phi) \right\rbrace 
-\end{equation} 
-  A notable example is obtained for the quantity $e^{a\phi}$. Namely
+\end{equation} This action is obtained by $\phi \to 1/ \sqrt{8 \pi} \phi$,
+   and by rescaling the coupling accordingly. In this way the Coleman bound is at $b=1$, simplifying the calculations. 
+   
+   A notable example is obtained for the quantity $e^{a\phi}$, namely
 \begin{align}
 \braket{e^{a \phi}} =  &\left[ \dfrac{m\Gamma(\frac{1}{2+2b^2}) \Gamma(1+ \frac{b^2}{2+2b^2}) }{4 \sqrt{\pi}}  \right]^{-2 a^2} \times  \\ & \exp{\left\lbrace \int_0^\infty \dfrac{dt}{t} \left[ - \dfrac{\sinh^2(2 a b t)}{2 \sinh(b^2t) \sinh(t)\cosh((1+b^2)t) } + 2 a^2 e^{-2t} \right]  \right\rbrace } \nonumber \,,
 \end{align} where \begin{equation}
@@ -59,40 +61,49 @@ The lattice action (after rescaling the field as $\phi \to 1/\sqrt{8 \pi} \phi $
 
 \chapter{Comparing lattice theory with the continuum }
 
-Simple dimensional analysis show that both the field and the parameter $b$ are dimensionless, while $  \mu$ has a dimension 2 in energy. Labelling lattice parameter with an hat, we have $\hat \mu = a^2 \mu$. Naively the continuum is limit is obtained  with $\hat \mu \to 0$. To compare lattice results with the continuum analytic results, we need to find the lines of constant physics.
+Simple dimensional analysis show that both the field and the parameter $b$ are dimensionless, while $\mu$ has a dimension 2 in energy. Labelling lattice parameter with an hat, we have $\hat \mu = a^2 \mu$. Naively the continuum is limit is obtained  with $\hat \mu \to 0$. To compare lattice results with the continuum analytic results, we need to find the lines of constant physics.
 
-We can do this using lattice perturbation theory. Calculating the perturbative expansion of the two point function and setting the pole position equal to the mass gives a relation between $ \hat \mu$ and $\hat b$. This can be checked non-perturbatively doing lattice spectroscopy and checking the value of the physical mass obtained.
+We can do this using lattice perturbation theory. Calculating the perturbative expansion of the two point function and setting the pole position equal to the mass gives a relation between $ \hat \mu$ and $ b$. This can be checked non-perturbatively doing lattice spectroscopy and checking the value of the physical mass obtained.
 
 The theory has an infinite number of interaction terms \begin{align}
 \mathcal{A} &= \sum_x \dfrac{1}{2} \sum_\nu  (\delta_\nu \phi(x))^2 + \dfrac{\hat m_0^2}{g^2} \cosh(g \phi) =\\
   &= \sum_x \left[ N_d \phi(x)^2 +  \sum_\nu \phi(x) \phi(x+\nu) +  \dfrac{\hat m_0^2 }{2}\phi(x)^2 \right. \nonumber \\
   &\left. +   \dfrac{ \hat m_0^2 g^2}{4!} \phi(x)^4 +  \dfrac{ \hat m_0^2 g^4}{6!} \phi(x)^6 + \dots  \right]
 \end{align} which leads to an infinite number of Feynman rules for n-point vertex, with n even, namely \begin{equation}
-V_n = - \hat m_0^2 g^{n-2}
-\end{equation}
+V_n = - \hat m_0^2 g^{n-2} \,.
+\end{equation} We chose this action since it doesn't have a factor of the coupling in the bare mass. 
  
   We can expanding the two point function in perturbation theory over powers of the couple $g^2$. In the continuum both the coupling and the field don't renormalize. There is only a multiplicative renormalization of the mass parameter, given by \eqref{eq:mass_continuum}. Setting the two point function \begin{equation}
   D(p^2) = \dfrac{1}{\hat{p^2}+ m^2} +O(\hat{p^2} +m^2)
 \end{equation}  for $p^2 \to -m^2$ one obtains \begin{align}
-  m^2=&   m_0^2  +\dfrac{1}{2}   m_0^2 g^2 I( m^2)+ \dfrac{1}{8}  m_0^2 g^4 I( m^2)^2 + O(g^6) \\
- = &  m_0^2 (1 + \frac{1}{2}g^2 I( m^2) + \frac{1}{8} g^4 I( m^2)^2 ) + O(g^6 )
+  m^2=&   m_0^2  +\dfrac{1}{2}   m_0^2 g^2 T( m^2)+ \dfrac{1}{8}  m_0^2 g^4 T( m^2)^2 + O(g^6) \\
+ = &  m_0^2 (1 + \frac{1}{2}g^2 T( m^2) + \frac{1}{8} g^4 T( m^2)^2 ) + O(g^6 )
  \end{align} We have  the tadpole integral \begin{equation}
  \label{eq:tadpole}
- I(m^2) = \int_{-\pi/a}^{\pi/a} \dfrac{d^2k}{(2 \pi)^2} \dfrac{1}{\hat{k^2} + m^2
+ T(m^2) = \int_{-\pi/a}^{\pi/a} \dfrac{d^2k}{(2 \pi)^2} \dfrac{1}{\hat{k^2} + m^2
   }
  \end{equation} where $\hat{k^2} = \hat{k_x}^2 + \hat{k_y}^2$ and $\hat k = 2/a \sin (ka/2)$. The symmetry factors $1/2$ and $1/8$ are obtained by multiplying the factors $1/4!$ and $1/6!$ of the action by the number of possible connection between vertices and external legs when constructing the tadpole and double tadpole integral.
  It immediately appears that there must be a logarithmic divergence when one substitutes $l_\mu = a k_\mu$ and takes the limit $a\to 0$. 
  We can substitute $\hat m_0^2$ with $\hat m^2$ in the integrals with an error of order $b^6$. We invert the series \begin{equation}
-  m_0^2 =  m^2(1 - \frac{1}{2}g^2 I(  m^2) - \frac{1}{8} g^4 I(m^2)^2 ) + O( g^6 ) \,.
+  m_0^2 =  m^2(1 - \frac{1}{2}g^2 T(  m^2) - \frac{1}{8} g^4 T(m^2)^2 ) + O( g^6 ) \,.
  \end{equation} This formula gives us, given a physical value of the mass $m$, the bare parameter $m_0$ for a fixed value of the lattice spacing $a$. 
- \section{Evaluation of the tadpole}
+ 
+ We can do a similar operation for the coupling, by setting the full four point function with zero external momentum equal to the renormalized coupling constant. We obtain \begin{equation}
+ g_R^2 = g^2 +\dfrac{m^2 g^4}{2} T(m^2) + \dfrac{3 m^4 g^4}{2} V(m^2) + O(g^6)
+\end{equation} We invert this relation as well, obtaining \begin{equation}
+g^2 = g_R^2(1- (\dfrac{m^2}{2}I(m^2) - \dfrac{3m^4}{2}V(m^2) )g_R^2) + O(g_R^4)
+\end{equation} We need to evluate the tadpole and the vertex correction integrals.
+  
+ \section{Evaluation of the integrals}
  
  We substitute $l_\mu = a k_\mu$ in \eqref{eq:tadpole} obtaining \begin{equation}
- I( m^2) =  \int_{-\pi}^\pi \dfrac{d^2l}{(2 \pi)^2}\dfrac{1}{\hat l^2 + a^2m^2} =  I_1(a^2 m^2) \,.
- \end{equation} The integral has infrared divergencies for $a \to 0$. We can evaluate numerically the value of $I_1$ for $a\to 0$ only dividing the integral in two parts, one within a small radius $\rho$, and the other outside.
- obtaining:
+ T( m^2) =  \int_{-\pi}^\pi \dfrac{d^2l}{(2 \pi)^2}\dfrac{1}{\hat l^2 + a^2m^2} =  I_1(a^2 m^2) \,.
+ \end{equation} The integral has infrared divergencies for $a \to 0$. We define \begin{equation}
+ I_n(\xi^2) = \int_{-\pi}^\pi \dfrac{d^2l}{(2 \pi)^2}\dfrac{1}{(\hat l^2 + \xi^2)^n}
+\end{equation}  We can evaluate numerically the value of $I_1$ for $a\to 0$ only dividing the integral in two parts, one within a small radius $\rho$, and the other outside.
+ We obtain:
  \begin{align}
- I_1 &= \int_{|l|< \rho} \dfrac{d^2l}{(2 \pi)^2} \dfrac{1}{l^2 + \xi^2} +\int_{|l|> \rho} \dfrac{d^2l}{(2 \pi)^2} \dfrac{1}{\hat l^2 + \xi^2}  \\
+ I_1(\xi^2) &= \int_{|l|< \rho} \dfrac{d^2l}{(2 \pi)^2} \dfrac{1}{l^2 + \xi^2} +\int_{|l|> \rho} \dfrac{d^2l}{(2 \pi)^2} \dfrac{1}{\hat l^2 + \xi^2}  \\
  &= \dfrac{1}{4 \pi} \dfrac{\xi^2}{\rho^2} - \dfrac{1}{4 \pi} \ln \left( \dfrac{\xi^2}{\rho^2}\right) + \int_{|l|> \rho} \dfrac{d^2l}{(2 \pi)^2} \dfrac{1}{\hat l^2 } - \xi^2 \int_{|l|> \rho} \dfrac{d^2l}{(2 \pi)^2} \dfrac{1}{(\hat l^2)^2}  +O(\xi^4) \nonumber \\
  &= Z_0 -\xi^2 C_0 -\dfrac{1}{4 \pi} \ln(\xi^2) ,. \nonumber
  \end{align} We have expanded both parts in powers of $a^2$. We defined $\xi^2 = a^2 m^2$ and we introduced the quantities
@@ -101,7 +112,14 @@ Z_0 &= \lim_{\rho \to 0} \int_{|l|> \rho}  \dfrac{d^2l}{(2 \pi)^2} \dfrac{1}{\ha
 C_0 &= \lim_{\rho \to 0}  \int_{|l|> \rho}  \dfrac{d^2l}{(2 \pi)^2} \dfrac{1}{(\hat l^2)^2 } - \dfrac{1}{4 \pi \rho^2} \,.
 \end{align} Actually the quantities $C_0$ is ininfluent for $a\to 0$, so we have the result \begin{equation}
 I(a^2 m^2)= Z_0 - \dfrac{1}{4 \pi} \ln(a^2m^2) \,.
-\end{equation}
+\end{equation} For the evaluation of the vertex corrections, we note that \begin{equation}
+V(m^2) = \int_{-\pi}^\pi \dfrac{d^2l}{(2 \pi)^2}\dfrac{1}{(\hat l^2 + a^2m^2)^2} = a^2 I_2(a^2 m^2) \,.
+\end{equation} We use the relation \begin{equation}
+I_2(\xi^2) = - \dfrac{d}{d\xi^2} I_1(\xi^2) = C_0 + \dfrac{1}{4 \pi \xi^2} + O(\xi^2) \,.
+\end{equation} We have the final result: \begin{align}
+  m_0^2 &=  m^2(1 - \frac{1}{2}g^2 I_1( a^2 m^2) - \frac{1}{8} g^4 I_1(a^2 m^2)^2 ) + O( g^6 ) \\
+g^2 &= g_R^2(1- (\dfrac{m^2}{2}I_1(a^2 m^2) - \dfrac{3m^4a^2}{2} I_2(a^2m^2) )g_R^2) + O(g_R^4) \,.
+\end{align}
  
  
  
