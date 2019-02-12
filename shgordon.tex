@@ -60,39 +60,44 @@ Simple dimensional analysis show that both the field and the parameter $b$ are d
 We can do this using lattice perturbation theory. Calculating the perturbative expansion of the two point function and setting the pole position equal to the mass gives a relation between $ \hat \mu$ and $\hat b$. This can be checked non-perturbatively doing lattice spectroscopy and checking the value of the physical mass obtained.
 
 The theory has an infinite number of interaction terms \begin{align}
-\mathcal{A} =  \sum_x &\left[  \phi(x)^2 +  \sum_\nu \phi(x) \phi(x+\nu) +  {\hat \mu b^2}\phi(x)^2 \right. \nonumber \\
-  &\left. +   \dfrac{ 2 \hat \mu b^4}{4!} \phi(x)^4 +  \dfrac{2 \hat \mu b^6}{6!} \phi(x)^6 + \dots  \right]
-\end{align} which leads to an infinite number of Feynman rules for n-point vertex, with n even.
+\mathcal{A} &= \sum_x \dfrac{1}{2} \sum_\nu  (\delta_\nu \phi(x))^2 + \dfrac{\hat m_0^2}{g^2} \cosh(g \phi) =\\
+  &= \sum_x \left[ N_d \phi(x)^2 +  \sum_\nu \phi(x) \phi(x+\nu) +  \dfrac{\hat m_0^2 }{2}\phi(x)^2 \right. \nonumber \\
+  &\left. +   \dfrac{ \hat m_0^2 g^2}{4!} \phi(x)^4 +  \dfrac{ \hat m_0^2 g^4}{6!} \phi(x)^6 + \dots  \right]
+\end{align} which leads to an infinite number of Feynman rules for n-point vertex, with n even, namely \begin{equation}
+V_n = - \hat m_0^2 g^{n-2}
+\end{equation}
  
-  We can expanding the two point function in perturbation theory over powers of the couple $b^2$. In the continuum both the coupling and the field don't renormalize. There is only a multiplicative renormalization of the mass parameter, given by \eqref{eq:mass_continuum}. Setting the two point function \begin{equation}
+  We can expanding the two point function in perturbation theory over powers of the couple $g^2$. In the continuum both the coupling and the field don't renormalize. There is only a multiplicative renormalization of the mass parameter, given by \eqref{eq:mass_continuum}. Setting the two point function \begin{equation}
   D(p^2) = \dfrac{1}{\hat{p^2}+ m^2} +O(\hat{p^2} +m^2)
 \end{equation}  for $p^2 \to -m^2$ one obtains \begin{align}
- \hat m^2=&  \hat \mu b^2 +\dfrac{1}{2}  \hat \mu b^4 I(\hat \mu)+ \dfrac{1}{8} \hat \mu b^6 I(\hat \mu)^2 + O(\hat \mu b^8) \\
- = & \hat m_0 (1 + \frac{1}{2}b^2 I( \hat \mu) + \frac{1}{8} b^4 I(\hat \mu)^2 ) + O(\hat \mu b^8 )
- \end{align} We have the bare mass $\hat m_0^2 =  \hat \mu b^2 $ and the tadpole integral \begin{equation}
+  m^2=&   m_0^2  +\dfrac{1}{2}   m_0^2 g^2 I( m^2)+ \dfrac{1}{8}  m_0^2 g^4 I( m^2)^2 + O(g^6) \\
+ = &  m_0^2 (1 + \frac{1}{2}g^2 I( m^2) + \frac{1}{8} g^4 I( m^2)^2 ) + O(g^6 )
+ \end{align} We have  the tadpole integral \begin{equation}
  \label{eq:tadpole}
- I(\hat \mu) = \int_{-\pi/a}^{\pi/a} \dfrac{d^2k}{(2 \pi)^2} \dfrac{1}{\hat{k^2} + \hat \mu b^2
+ I(m^2) = \int_{-\pi/a}^{\pi/a} \dfrac{d^2k}{(2 \pi)^2} \dfrac{1}{\hat{k^2} + m^2
   }
- \end{equation} where $\hat{k^2} = \hat{k_x}^2 + \hat{k_y}^2$ and $\hat p = 2 \sin (pa/2)$.
- It immedetialy appears that there is a divergence when one substitutes $l_\mu = a k_\mu$ and takes the limit $a\to 0$. 
- We can substitute $\hat m_0^2$ with $\hat m^2$ in the integrals with an error of order $b^2$. We invert the series \begin{equation}
- \hat m_0^2 = \hat m^2(1 + \frac{1}{2}b^2 I( \hat m) + \frac{1}{8} b^4 I(\hat m)^2 ) + O(\hat m b^6 ) \,.
+ \end{equation} where $\hat{k^2} = \hat{k_x}^2 + \hat{k_y}^2$ and $\hat k = 2/a \sin (ka/2)$. The symmetry factors $1/2$ and $1/8$ are obtained by multiplying the factors $1/4!$ and $1/6!$ of the action by the number of possible connection between vertices and external legs when constructing the tadpole and double tadpole integral.
+ It immediately appears that there must be a logarithmic divergence when one substitutes $l_\mu = a k_\mu$ and takes the limit $a\to 0$. 
+ We can substitute $\hat m_0^2$ with $\hat m^2$ in the integrals with an error of order $b^6$. We invert the series \begin{equation}
+  m_0^2 =  m^2(1 - \frac{1}{2}g^2 I(  m^2) - \frac{1}{8} g^4 I(m^2)^2 ) + O( g^6 ) \,.
  \end{equation} This formula gives us, given a physical value of the mass $m$, the bare parameter $m_0$ for a fixed value of the lattice spacing $a$. 
  \section{Evaluation of the tadpole}
  
  We substitute $l_\mu = a k_\mu$ in \eqref{eq:tadpole} obtaining \begin{equation}
- I(\hat m^2) =  \int_{-\pi}^\pi \dfrac{d^2l}{(2 \pi)^2}\dfrac{1}{\hat l^2 + a^2m^2} =  I_1(a^2 m^2)
+ I(\hat m^2) =  \int_{-\pi}^\pi \dfrac{d^2l}{(2 \pi)^2}\dfrac{1}{\hat l^2 + a^2m^2} =  I_1(a^2 m^2) \,.
  \end{equation} The integral has infrared divergencies for $a \to 0$. We can evaluate numerically the value of $I_1$ for $a\to 0$ only dividing the integral in two parts, one within a small radius $\rho$, and the other outside.
  obtaining:
  \begin{align}
- I &= \int_{|l|< \rho} \dfrac{d^2l}{(2 \pi)^2} \dfrac{1}{l^2 + \xi^2} +\int_{|l|> \rho} \dfrac{d^2l}{(2 \pi)^2} \dfrac{1}{\hat l^2 + \xi^2}  \\
- &= \dfrac{1}{4 \pi} \dfrac{\xi^2}{\rho^2} - \dfrac{1}{4 \pi} \ln \left( \dfrac{\rho^2}{\xi^2}\right) + \int_{|l|> \rho} \dfrac{d^2l}{(2 \pi)^2} \dfrac{1}{\hat l^2 } - \xi^2 \int_{|l|> \rho} \dfrac{d^2l}{(2 \pi)^2} \dfrac{1}{(\hat l^2)^2}  +O(\xi^4) \nonumber \\
- &= Z_0 -\xi^2 C_0 -\dfrac{1}{4 \pi} \ln(\xi^2) \nonumber
- \end{align} We defined $\xi^2 = a^2 m^2$ and we introduced the quantities
+ I_1 &= \int_{|l|< \rho} \dfrac{d^2l}{(2 \pi)^2} \dfrac{1}{l^2 + \xi^2} +\int_{|l|> \rho} \dfrac{d^2l}{(2 \pi)^2} \dfrac{1}{\hat l^2 + \xi^2}  \\
+ &= \dfrac{1}{4 \pi} \dfrac{\xi^2}{\rho^2} - \dfrac{1}{4 \pi} \ln \left( \dfrac{\xi^2}{\rho^2}\right) + \int_{|l|> \rho} \dfrac{d^2l}{(2 \pi)^2} \dfrac{1}{\hat l^2 } - \xi^2 \int_{|l|> \rho} \dfrac{d^2l}{(2 \pi)^2} \dfrac{1}{(\hat l^2)^2}  +O(\xi^4) \nonumber \\
+ &= Z_0 -\xi^2 C_0 -\dfrac{1}{4 \pi} \ln(\xi^2) ,. \nonumber
+ \end{align} We have expanded both parts in powers of $a^2$. We defined $\xi^2 = a^2 m^2$ and we introduced the quantities
 \begin{align}
-Z_0 &= \lim_{\rho \to 0} \int_{|l|> \rho}  \dfrac{d^2l}{(2 \pi)^2} \dfrac{1}{\hat l^2 } + \dfrac{1}{4 \pi} \log(\rho^2)=0.275794 \\
-C_0 &= \lim_{\rho \to 0}  \int_{|l|> \rho}  \dfrac{d^2l}{(2 \pi)^2} \dfrac{1}{(\hat l^2)^2 } - \dfrac{1}{4 \pi \rho^2}
-\end{align} 
+Z_0 &= \lim_{\rho \to 0} \int_{|l|> \rho}  \dfrac{d^2l}{(2 \pi)^2} \dfrac{1}{\hat l^2 } + \dfrac{1}{4 \pi} \log(\rho^2)=0.275794 \,, \\
+C_0 &= \lim_{\rho \to 0}  \int_{|l|> \rho}  \dfrac{d^2l}{(2 \pi)^2} \dfrac{1}{(\hat l^2)^2 } - \dfrac{1}{4 \pi \rho^2} \,.
+\end{align} Actually the quantities $C_0$ is ininfluent for $a\to 0$, so we have the result \begin{equation}
+I(a^2 m^2)= Z_0 - \dfrac{1}{4 \pi} \ln(a^2m^2) \,.
+\end{equation}
  
  
  
