@@ -38,7 +38,11 @@ b \to 1/b \; ; \; \beta \to 1- \beta \,.
 
 
 \section{Observables}
-Calculations of observable quantities have been made for this model.   A notable example is obtained for the quantity $e^{a\phi}$. Namely
+Calculations of observable quantities have been made for this model. 
+The action used in this calculations is \begin{equation}
+\mathcal{A} = \int d^2x  \left\lbrace\dfrac{1}{16 \pi} \sum_\nu (\partial_\nu \phi )^2 + 2 \mu \cosh(b \phi) \right\rbrace 
+\end{equation} 
+  A notable example is obtained for the quantity $e^{a\phi}$. Namely
 \begin{align}
 \braket{e^{a \phi}} =  &\left[ \dfrac{m\Gamma(\frac{1}{2+2b^2}) \Gamma(1+ \frac{b^2}{2+2b^2}) }{4 \sqrt{\pi}}  \right]^{-2 a^2} \times  \\ & \exp{\left\lbrace \int_0^\infty \dfrac{dt}{t} \left[ - \dfrac{\sinh^2(2 a b t)}{2 \sinh(b^2t) \sinh(t)\cosh((1+b^2)t) } + 2 a^2 e^{-2t} \right]  \right\rbrace } \nonumber \,,
 \end{align} where \begin{equation}
@@ -55,7 +59,7 @@ The lattice action (after rescaling the field as $\phi \to 1/\sqrt{8 \pi} \phi $
 
 \chapter{Comparing lattice theory with the continuum }
 
-Simple dimensional analysis show that both the field and the parameter $b$ are dimensionless, while $\mu$ has a dimension 2 in energy. Labelling lattice parameter with an hat, we have $\hat \mu = a^2 \mu$. Naively the continuum is limit is obtained  with $\hat \mu \to 0$. To compare lattice results with the continuum analytic results, we need to find the lines of constant physics.
+Simple dimensional analysis show that both the field and the parameter $b$ are dimensionless, while $  \mu$ has a dimension 2 in energy. Labelling lattice parameter with an hat, we have $\hat \mu = a^2 \mu$. Naively the continuum is limit is obtained  with $\hat \mu \to 0$. To compare lattice results with the continuum analytic results, we need to find the lines of constant physics.
 
 We can do this using lattice perturbation theory. Calculating the perturbative expansion of the two point function and setting the pole position equal to the mass gives a relation between $ \hat \mu$ and $\hat b$. This can be checked non-perturbatively doing lattice spectroscopy and checking the value of the physical mass obtained.
 
@@ -84,7 +88,7 @@ V_n = - \hat m_0^2 g^{n-2}
  \section{Evaluation of the tadpole}
  
  We substitute $l_\mu = a k_\mu$ in \eqref{eq:tadpole} obtaining \begin{equation}
- I(\hat m^2) =  \int_{-\pi}^\pi \dfrac{d^2l}{(2 \pi)^2}\dfrac{1}{\hat l^2 + a^2m^2} =  I_1(a^2 m^2) \,.
+ I( m^2) =  \int_{-\pi}^\pi \dfrac{d^2l}{(2 \pi)^2}\dfrac{1}{\hat l^2 + a^2m^2} =  I_1(a^2 m^2) \,.
  \end{equation} The integral has infrared divergencies for $a \to 0$. We can evaluate numerically the value of $I_1$ for $a\to 0$ only dividing the integral in two parts, one within a small radius $\rho$, and the other outside.
  obtaining:
  \begin{align}
