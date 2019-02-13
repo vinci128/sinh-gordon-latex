@@ -5,7 +5,7 @@
 \usepackage{braket}
 
  
-
+\newcommand{\eq}{Eq.}
  
 \begin{document}
  
@@ -54,6 +54,7 @@ m = \dfrac{4 \sqrt{\pi}}{\Gamma(\frac{1}{2+2b^2})\Gamma(1 +\frac{b^2}{2+2b^2}) }
 
 After the redefinitions $g=b\sqrt{8\pi}$ and $m_0=4b\sqrt{\pi\mu}$, the square of the renormalised mass can be expanded in $g$ as
 \begin{align}
+\label{eq:exactrenormalisedmassexpansion}
 m^2=&m_0^2+\frac{m_0^2g^2}{8\pi}\left(
 -\gamma_E+\psi(1/2) +4 \log 2-\log m_0^2
 \right)+\notag\\
@@ -90,6 +91,7 @@ V_n = - \hat m_0^2 g^{n-2} \,.
   We can expanding the two point function in perturbation theory over powers of the couple $g^2$. In the continuum both the coupling and the field don't renormalize. There is only a multiplicative renormalization of the mass parameter, given by \eqref{eq:mass_continuum}. Setting the two point function \begin{equation}
   D(p^2) = \dfrac{1}{\hat{p^2}+ m^2} +O(\hat{p^2} +m^2)
 \end{equation}  for $p^2 \to -m^2$ one obtains \begin{align}
+\label{eq:renormalisedmass}
   m^2=&   m_0^2  +\dfrac{1}{2}   m_0^2 g^2 T( m^2)+ \dfrac{1}{8}  m_0^2 g^4 T( m^2)^2 + O(g^6) \\
  = &  m_0^2 (1 + \frac{1}{2}g^2 T( m^2) + \frac{1}{8} g^4 T( m^2)^2 ) + O(g^6 )
  \end{align} We have  the tadpole integral \begin{equation}
@@ -135,6 +137,9 @@ I_2(\xi^2) = - \dfrac{d}{d\xi^2} I_1(\xi^2) = C_0 + \dfrac{1}{4 \pi \xi^2} + O(\
 g^2 &= g_R^2(1- (\dfrac{m^2}{2}I_1(a^2 m^2) - \dfrac{3m^4a^2}{2} I_2(a^2m^2) )g_R^2) + O(g_R^6) \,.
 \end{align}
  
+\paragraph{Comment}
+We have shown that $T(m^2)=Z_0-\frac{1}{4\pi}\log a^2m^2 + O(a^4m^4)$.
+From \eq~\eqref{eq:renormalisedmass}, this implies that the coefficients of $\log a^2m^2$ at $O(g^2)$ and $(\log a^2m^2)^2$ at $O(g^4)$ match those in \eq~\eqref{eq:exactrenormalisedmassexpansion}.
  
  
 \end{document}
