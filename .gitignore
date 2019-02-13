@@ -1,0 +1,15 @@
+*~
+*.log
+*.lof
+*.lot
+*.blg
+*.bbl
+*.aux
+*.out
+*.synctex.gz
+*.toc
+*.fls
+*.rel
+*.DS_Store
+*.svn
+*.svn-base
