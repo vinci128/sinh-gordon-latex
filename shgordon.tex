@@ -26,7 +26,7 @@ In chapter \ref{sec:sinh_G_properties} we give some information about of the the
 \chapter{Properties of Sinh-Gordon model in the continuum }
 \label{sec:sinh_G_properties}
 The action that defines the model is \begin{equation}
-\mathcal{A} = \int d^2x \left\lbrace\dfrac{1}{2 \pi} \sum_\nu (\partial_\nu \phi )^2 + 2 \mu \cosh(b \phi) \right\rbrace \,.
+\mathcal{A} = \int d^2x \left\lbrace\dfrac{1}{2 } \sum_\nu (\partial_\nu \phi )^2 + 2 \mu \cosh(b \phi) \right\rbrace \,.
 \end{equation} 
 The sinh-Gordon model has many remarkable properties. It is integrable, has a unique vacuum and the simplest symmetry $Z_2$: $\phi \to -\phi$. Due to  integrability 	of the model, the S-matrix is factorizable in 2 particles S-matrix, and it is known analitically \begin{equation}
 S(\theta) = \dfrac{\sinh(\theta) -i \sin (\pi \beta)}{\sinh(\theta) +i \sin (\pi \beta) } \,.
@@ -37,7 +37,7 @@ E = m \cosh(\theta) \; ; \; P = m \sinh(\theta)\,.
 \end{equation} This result is obtained by analytic continuation from an analogous calculation in the sine-Gordon model, valid in the "Coleman bound", namely $b < \sqrt{8\pi}$. It is proven that the theory doesn't develop a mass gap over this bound. 
 
 This formula reveals an interesting property, which is not manifest in the Lagrangian, a duality symmetry given by \begin{equation}
-b \to 1/b \; ; \; \beta \to 1- \beta \,.
+b/\sqrt{8\pi} \to \sqrt{8 \pi}/b \; ; \; \beta \to 1- \beta \,.
 \end{equation} This transformation doesn't change the position of the zeroes in the S-matrix.
 
 
@@ -111,12 +111,13 @@ g = \sqrt{8 \pi} b \; ; \; m_0 = 4 b \sqrt{\pi \mu} \,.
 
  
  We can do a similar operation for the coupling, by setting the full four point function with zero external momentum equal to the renormalized coupling constant. We obtain \begin{equation}
- g_R^2 = g^2 +\dfrac{m^2 g^4}{2} T(m^2) + \dfrac{3 m^4 g^4}{2} V(m^2) + O(g^6)
+ g_R^2 = g^2 +\dfrac{\hat m^2 g^4}{2} T(m^2) + \dfrac{3 \hat
+  m^4 g^4}{2} V(m^2) + O(g^6)
 \end{equation} We invert this relation as well, obtaining \begin{equation}
-g^2 = g_R^2\left[1- \left(\dfrac{3m^2}{2}T(m^2) - \dfrac{3m^4}{2}V(m^2) \right)g_R^2 \right] + O(g_R^4)
+g^2 = g_R^2\left[1- \left(\dfrac{3 \hat m^2}{2}T(m^2) - \dfrac{3\hat  m^4}{2}V(m^2) \right)g_R^2 \right] + O(g_R^4)
 \end{equation} 
  We can substitute $\hat m_0^2$ with $\hat m^2$ in the integrals with an error of order $g^6$. We invert the series \begin{equation}
-  m_0^2 =  m^2\left[1 - \frac{1}{2}g^2 T(  m^2) + \left( \frac{1}{8}  T(m^2)^2+ \dfrac{3 m^2}{4}(T^2 +m^2VT) \right) g^4  \right] + O( g^6 ) \,.
+  m_0^2 =  m^2\left[1 - \frac{1}{2}g^2 T(  m^2) + \left( \frac{1}{8}  T(m^2)^2+ \dfrac{3 \hat m^2}{4}(T^2 + \hat m^2 V T) \right) g^4  \right] + O( g^6 ) \,.
  \end{equation} This formula gives us, given a physical value of the mass $m$, the bare parameter $m_0$ for a fixed value of the lattice spacing $a$. We need to evaluate the tadpole and the vertex correction integrals.
   
  \section{Evaluation of the integrals}
@@ -142,13 +143,16 @@ V(m^2) = \int_{-\pi/a}^{\pi/a} \dfrac{d^2k}{(2 \pi)^2}\dfrac{1}{(\hat k^2 + m^2)
 \end{equation} We use the relation \begin{equation}
 I_2(\xi^2) = - \dfrac{d}{d\xi^2} I_1(\xi^2) = C_0 + \dfrac{1}{4 \pi \xi^2} + O(\xi^2) \,.
 \end{equation} We have the final result: \begin{align}
-  m_0^2 &=  m^2\left[1 - \frac{1}{2}g^2 I_1( a^2 m^2) + \left(\frac{1 + 6m^2}{8} I_1(a^2m^2) + \dfrac{3m^4a^2}{4}I_1(a^2m^2)I_2(a^2m^2)  \right) g^4 \right] + O( g^6 ) \\
-g^2 &= g_R^2\left[1- \left( \dfrac{m^2}{2}I_1(a^2 m^2) - \dfrac{3m^4a^2}{2} I_2(a^2m^2) \right)g_R^2 \right] + O(g_R^6) \,.
+  m_0^2 &=  m^2\left[1 - \frac{1}{2}g^2 I_1( a^2 m^2) + \left(\frac{1 + 6 \hat m^2}{8} I_1(a^2m^2) + \dfrac{3\hat m^4a^2}{4}I_1(a^2m^2)I_2(a^2m^2)  \right) g^4 \right] + O( g^6 ) \\
+g^2 &= g_R^2\left[1- \left( \dfrac{\hat  m^2}{2}I_1(a^2 m^2) - \dfrac{3 \hat m^4a^2}{2} I_2(a^2m^2) \right)g_R^2 \right] + O(g_R^6) \,.
 \end{align}
  
-\paragraph{Comment}
+\paragraph{Comments}
 We have shown that $T(m^2)=Z_0-\frac{1}{4\pi}\log a^2m^2 + O(a^4m^4)$.
 From \eq~\eqref{eq:renormalisedmass}, this implies that the coefficients of $\log a^2m^2$ at $O(g^2)$ and $(\log a^2m^2)^2$ at $O(g^4)$ match those in \eq~\eqref{eq:exactrenormalisedmassexpansion}.
+
+Also, we have shown that $g^2 = g^2_R +O(a^2)$. This proves that the coupling has no divergences when taking the continuum limit, and also that it does not renormalize.
+
  
 \chapter{Mass scaling on the lattice} 
 \label{sec:mass_scaling}
@@ -168,7 +172,7 @@ m_{eff}(t+0.5) = \log \dfrac{C(t)}{C(t+1)} \,.
 Inspired by \eqref{eq:mass_continuum}, we want to observe a behaviour given by \begin{equation}
 \label{eq:lattice_mass_scaling}
 m_{eff}= f(b) \, \mu^\alpha
-\end{equation} with $f(b)$  an unknown function of the parameter "b", really sensible to lattice regularization artefacts, while we expect $\alpha$ to be close to the value obtained in the continuum, namely $1/(2+2b^2)$. 
+\end{equation} with $f(b)$  an unknown function of the parameter "b", really sensible to lattice regularization artefacts, while we expect $\alpha$ to be close to the value obtained in the continuum, namely $1/(2+2b^2)$. We don't know if the parameter $b$ renormalize on the lattice, but in principle we must assume that it does it. So we will use for this part of the analysis that for b fixed also a is fixed, so that we can check the relation between m and $\mu$.
 
 For a fixed beta we proceeded to fit the mass obtained with spectroscopy for various values of $\mu$.
 
@@ -177,7 +181,7 @@ The green line represent the fit with the $\alpha$ parameter free to vary, while
 
 We expect the results to be close to the continuum limit for small values of the effective mass, since, given a fixed measured value of the physical mass $m^*$ , it is related to the lattice mass simply by \begin{equation}
 a m^* =  \, \hat m_{lat}
-\end{equation} with $a$ being the lattice spacing. We used  values of $m_lat$ between $0.001$ and $1$, we believe are reasonably close to the continuum limit in this region. Lower values of the effective mass results in a theory with a really slow growing potential, and the numerical algorhithms for these cases generates very correlated configurations. Higher values of the effective mass increase lattice artefacts considerably, and this can invalidate our assumption of the behaviour, so they will not be considered as well.
+\end{equation} with $a$ being the lattice spacing. We used  values of $m_{lat}$ between $0.001$ and $1$, we believe we are reasonably close to the continuum limit in this region. Lower values of the effective mass results in a theory with a really slow growing potential, and the numerical algorhithms for these cases generates very correlated configurations. Higher values of the effective mass increase lattice artefacts considerably, and this can invalidate our assumption of the behaviour, so they will not be considered as well.
 \begin{figure}
 \label{fig:mass_scaling_b0.1}
 \centering
