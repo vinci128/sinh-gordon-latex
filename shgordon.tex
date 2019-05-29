@@ -4,7 +4,7 @@
 \usepackage{amsmath,amsthm,amssymb}
 \usepackage{braket}
 \usepackage{graphicx}
-
+\usepackage[toc,page]{appendix}
  
 \newcommand{\eq}{Eq.}
  
@@ -48,10 +48,10 @@ The action used in this calculations is \begin{equation}
 \end{equation} This action is obtained by $\phi \to 1/ \sqrt{8 \pi} \phi$,
    and by rescaling the coupling accordingly. In this way the Coleman bound is at $b=1$, simplifying the calculations. 
    
-   A notable example is obtained for the quantity $e^{a\phi}$, namely
+   A notable example is obtained for the quantity $e^{a\phi}$ \cite{fateev1997expectation}, namely
 \begin{align}
 \braket{e^{a \phi}} =  &\left[ \dfrac{m\Gamma(\frac{1}{2+2b^2}) \Gamma(1+ \frac{b^2}{2+2b^2}) }{4 \sqrt{\pi}}  \right]^{-2 a^2} \times  \\ & \exp{\left\lbrace \int_0^\infty \dfrac{dt}{t} \left[ - \dfrac{\sinh^2(2 a b t)}{2 \sinh(b^2t) \sinh(t)\cosh((1+b^2)t) } + 2 a^2 e^{-2t} \right]  \right\rbrace } \nonumber \,,
-\end{align} where \begin{equation}
+\end{align} where \cite{zamolodchikov1995mass} \begin{equation}
 \label{eq:mass_continuum}
 m = \dfrac{4 \sqrt{\pi}}{\Gamma(\frac{1}{2+2b^2})\Gamma(1 +\frac{b^2}{2+2b^2}) } \left[ - \dfrac{\mu \pi \Gamma(1+b^2)}{\Gamma(-b^2)} \right]^{\frac{1}{2+2b^2}} \,.
 \end{equation} The last equation gives the renormalized particle mass in terms of the bare parameter $\mu$ and the coupling b. It is remarkable that this formula doesn't satisfy the duality symmetry, and that the mass goes to zero for $b=1$ (which is equivalent to the Coleman bound, after the rescaling of $1/8\pi$ of the kinetic term). It has been obtained by analytic continuation from a mass formula for the breather in the Sin-Gordon model spectrum, valid for $b<0.5$.
@@ -74,9 +74,9 @@ We can also obtain a dimensionless quantity which is easy to estimate. It is giv
 R = \dfrac{\braket{e^{r\phi}} \braket{e^{s \phi}} }{ \braket{e^{t \phi}} \braket{e^{u \phi}} } \,.
 \end{equation} The coefficients have to satisfy $r^2+s^2 = t^2 +u^2$. When this condition is satisfied, all factors relatives to the scaling dimension cancel out, leading to the prediction \begin{equation}
 R =  \exp \int_0^\infty \dfrac{dz}{z} - \left\{ \dfrac{\sinh(2rbz)^2+ \sinh(2sbz)^2- \sinh(2tbz)^2- \sinh(2ubz)^2 }{2 \sinh(b^2 z) \sinh(z) \cosh((1+b^2)z) } \right\} \,.
-\end{equation} The integral, thanks to the aforementioned condition, is convergent for small values of z, while it can diverge at infinity for some values of the vertex parameter $r$. In particular one must satisfy \begin{equation}
+\end{equation} The integral, thanks to the aforementioned condition, is convergent for small values of z, while it can diverge at infinity for some values of the vertex parameter $r$. TO avoid divergences,  one must satisfy \begin{equation}
 r < \dfrac{b^2+1}{2b} \,.
-\end{equation} This condition is always satisfied for $a<1$. For simulations we will take account of this bound, in order to avoid problems related to divergencies.
+\end{equation} This condition is obtained by observing the limit for z that goes to infinity of the integrand, and it is always satisfied for $r<1$. For simulations we will take account of this bound, in order to avoid problems related to divergencies.
 
 
 \chapter{Lattice setup}
@@ -275,9 +275,23 @@ As noted in previous sections, the mass formula is valid up to $b=1$. Nonperturb
 \includegraphics[width=1.0\textwidth]{b2_3}
 \caption{Results for b=2.3}
 \label{fig:mass_scaling_b2.3}
+\end{figure}  
+  
+ \begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{b2_5}
+\caption{Results for b=2.5}
+\label{fig:mass_scaling_b2.5}
 \end{figure}
 
-In pictures \ref{fig:mass_scaling_b1.2}, \ref{fig:mass_scaling_b1.5}, \ref{fig:mass_scaling_b1.7}, \ref{fig:mass_scaling_b2.3} we show the results for $b=1.2,1.5,1.7,2.3$. We can see clearly that the red line deviates from the green line, which is in good agreement with the data. 
+ \begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{b3}
+\caption{Results for b=3}
+\label{fig:mass_scaling_b3}
+\end{figure}
+
+In pictures \ref{fig:mass_scaling_b1.2}, \ref{fig:mass_scaling_b1.5}, \ref{fig:mass_scaling_b1.7}, \ref{fig:mass_scaling_b2.3}, \ref{fig:mass_scaling_b2.5}, \ref{fig:mass_scaling_b3} we show the results for $b=1.2,1.5,1.7,2.3$. We can see clearly that the red line deviates from the green line, which is in good agreement with the data. 
 
 We can show the deviation from the expected behaviour, for $b>1$ in figure \ref{fig:alphavsb}, where all the exponents from the fits are plotted alogside with the function $\alpha_{th}(b)=1/(2+2b^2)$.
 
@@ -297,5 +311,30 @@ We can show the deviation from the expected behaviour, for $b>1$ in figure \ref{
 \label{fig:f_b}
 \end{figure} 
 
+
+\begin{appendices}
+\chapter{Finite volume effects}
+
+It is of most interest verifying that in our analysis finite volume effects are small and quantifiable.
+
+For a scalar theory which has a mass gap in the non-interacting limit, effects in the variation of the mass $\Delta m = m(l)- m(\infty)$ have been quantified to decrease exponentially as $-e^{- \frac{\sqrt{3}}{2} m L } $, where $m$ is the mass gap of the theory and $L$ the spatial length\cite{luscher1986volume}.
+
+The hypothesis has been verified for small values of $b$, as shown in figure \ref{fig:b0.1_finite_volume}.
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{b0_1_finite_volume.jpg}
+\caption{Mass value dependence with repect to smaller volume is plotted}
+\label{fig:b0.1_finite_volume}
+\end{figure}
+
+
+
+\end{appendices}
+
+\bibliography{shbib} 
+\bibliographystyle{ieeetr}
+
 \end{document}
+
  
