@@ -159,12 +159,27 @@ g^2 &= g_R^2\left[1- \left( \dfrac{\hat  m^2}{2}I_1(a^2 m^2) - \dfrac{3 \hat m^4
 We have shown that $T(m^2)=Z_0-\frac{1}{4\pi}\log a^2m^2 + O(a^4m^4)$.
 From \eq~\eqref{eq:renormalisedmass}, this implies that the coefficients of $\log a^2m^2$ at $O(g^2)$ and $(\log a^2m^2)^2$ at $O(g^4)$ match those in \eq~\eqref{eq:exactrenormalisedmassexpansion}.
 
+
+\section{Lattice renormalization group}
+
+We can obtain easily the anomalous dimension at first order for $m_0^2$ from \ref{eq:renormalisedmass}  by imposing \begin{align}
+\dfrac{\partial}{\partial \ln a} m^2= &0 = \dfrac{\partial}{\partial \ln a} \left[ m_0^2 \left(1 + \frac{1}{2}g^2 T( m^2) + \frac{1}{8} g^4 T( m^2)^2 \right) \right] + O(g^6 ) \nonumber \\
+ =&  \left(\dfrac{\partial}{\partial \ln a} m_0^2\right)\left(1 + \frac{1}{2}g^2 T( m^2) + \frac{1}{8} g^4 T( m^2)^2 \right) \nonumber \\
+ +& m_0^2  \dfrac{\partial}{\partial \ln a} \left(1 + \frac{1}{2}g^2 T( m^2) + \frac{1}{8} g^4 T( m^2)^2 \right) + O(g^6) \,.
+\end{align} One obtains  \begin{equation}
+\label{eq:anomalous dimension}
+\gamma_{m_0^2} = \dfrac{1}{m_0^2} \dfrac{\partial}{\partial \ln a} m_0^2(a^2) =\dfrac{g^4}{4 \pi} + \mathcal{O}(g^6) = 2 b^2 + \mathcal{O}(b^6)  \,.
+\end{equation}
+This shows that the dimension of $m_0^2$ goes from the naive one $2$ to $2(1+b^2)$. 
+
 Also, we have shown that $g^2 = g^2_R +O(a^2)$. This proves that the coupling has no divergences when taking the continuum limit, and also that it does not renormalize.
 
  
 \chapter{Mass scaling on the lattice} 
 \label{sec:mass_scaling}
 We are interested in verifying the assumptions given by the mass formula \eqref{eq:mass_continuum} for  mass values we can obtain with lattice with our setup. We want to do this motivated by the comment of the last section. Since the coefficients in front of the logarithm mathches, we want to use the result relative to the resummation of the logarithm at every order, which gives the $\mu^{1/(2+2b^2)}$ behaviour. The coefficient in front of that will be a result of the lattice regularization, and will be affected heavily by lattice artefacts.
+
+
 
 We used as spectroscopical operator the time sliced field \begin{equation}
 O(t) = \sum_x \phi(t,x)
@@ -181,6 +196,12 @@ Inspired by \eqref{eq:mass_continuum}, we want to observe a behaviour given by \
 \label{eq:lattice_mass_scaling}
 m_{eff}= f(b) \, \mu^\alpha
 \end{equation} with $f(b)$  an unknown function of the parameter "b", really sensible to lattice regularization artefacts, while we expect $\alpha$ to be close to the value obtained in the continuum, namely $1/(2+2b^2)$. We have shown in the previous section that the parameter $b$ doesn't renormalize on the lattice, so we will assume it. We will use for this part of the analysis that for b fixed also a is fixed, so that we can check the relation between m and $\mu$.
+
+It's also interesting to note that, by imposing \begin{equation}
+\dfrac{\partial}{\partial \ln a} m= 0 = \dfrac{\partial}{\partial \ln a}\left[(a \mu)^{\frac{1}{2+2b^2}} \dfrac{1}{a} \right]
+\end{equation} one obtains the anomalous dimension \begin{equation}
+\gamma_\mu(b) = 2b^2
+\end{equation} which match the perturbative result at first order \eqref{eq:anomalous dimension}.
 
 For various fixed beta values we proceeded to fit the mass obtained from spectroscopy for various values of $\mu$.
 
@@ -319,7 +340,7 @@ It is of most interest verifying that in our analysis finite volume effects are 
 
 For a scalar theory which has a mass gap in the non-interacting limit, effects in the variation of the mass $\Delta m = m(l)- m(\infty)$ have been quantified to decrease exponentially as $-e^{- \frac{\sqrt{3}}{2} m L } $, where $m$ is the mass gap of the theory and $L$ the spatial length\cite{luscher1986volume}.
 
-The hypothesis has been verified for different values of $b$, as shown in figure \ref{fig:b0.1_finite_volume},\ref{fig:b1_finite_volume} and \ref{fig:b2.5_finite_volume}.
+The hypothesis has been verified for different values of $b$, as shown in figure \ref{fig:b0.1_finite_volume}, \ref{fig:b1_finite_volume} and \ref{fig:b2.5_finite_volume}.
 
 \begin{figure}
 \centering
@@ -341,6 +362,41 @@ The hypothesis has been verified for different values of $b$, as shown in figure
 \caption{Mass value dependence with respect to smaller volumes is plotted}
 \label{fig:b2.5_finite_volume}
 \end{figure}
+
+\chapter{Bosonic free conformal field theory}
+
+We want to discuss how a conformal free field theory, in particular the free massless scalar field theory, described by the action \begin{equation}
+\mathcal{S} = \int d^2x \dfrac{1}{2} \partial_\mu \phi \partial^\mu \phi \,,
+\end{equation} can be described in terms of a lattice regularized version. 
+
+It is interesting for this work, since is the limit for $\mu \to 0$ of the Sinh-Gordon action, and perturbation theory can be made around it.
+
+In the continuum, the theory is both ultraviolet and infrared divergent, so it needs two cutoff. If we name then by $a$ and $R$ we obtain \begin{align}
+G(z,\bar z) &= \braket{ \phi(z, \bar z) \phi(0,0) } = - \dfrac{1}{2 \pi}  \log \dfrac{z}{a} -\dfrac{1}{2 \pi}  \log \dfrac{\bar z}{a} \,. \\
+G(0,0) &= - \dfrac{1}{4 \pi}\log \dfrac{R}{a} \,.
+\end{align}
+
+From the propagators one can see that $\phi(x)$ is not a conformal field. They can be constructed using derivatives or using the exponential operators $\tilde V_\alpha = e^{i \alpha \phi}$ called also vertex operators.
+
+It can be shown that, since the action is quadratic, n-point functions of vertex operators can be computed directly from the functional integral, obtaining \begin{equation}
+\prod_{i =1}^n \braket{\tilde{V}_{\alpha_i}(z_i) } = \left( \dfrac{a}{R} \right)^{(\Sigma_i^n \alpha_i)^2} \prod_{i < j} \left(  \dfrac{z_i -z_j}{a}\right)^{- \alpha_i \alpha_j} \,.
+\end{equation} One can get rid of the ultraviolet cutoff dependence by defining the renormalized vector operator \begin{equation}
+\tilde{V}_\alpha (z) \to V_\alpha = \lim_{a \to 0} a^{-\alpha^2/2} e^{i \alpha \phi} \equiv : e^{i \alpha \phi}: \,.
+\end{equation}
+
+It's interesting to think of an equivalent of this redefinition on the lattice. In principle, it is expected that the conformal invariance of the theory can be reobtained in an infrared regime, while explicitly violated in ultraviolet by the natural cutoff given by lattice spacing. The above redefinition takes into account ultraviolet quantities, in particular it's equivalent to subtract all the tadpole divergences coming from the self interactions of the field $\phi(z)$.
+
+We are interested in the two point function \begin{equation}
+\braket{\tilde{V}_\alpha(x) \tilde{V}_{-\alpha}(0)} = e^{-\alpha^2(\Delta(x) -\Delta(0))} \,.
+\end{equation} We chose to use two opposite $charges$ in order to remove the infrared divergence. In particular, we want to set the result for the two point function equal to the expected conformal result \begin{equation}
+\braket{V_\alpha(x) V_{-\alpha}(0) } = \dfrac{1}{x^{2 \alpha^2}} \,.
+\end{equation} In order to check if it is possible to recreate such a regime for correlation functions on the lattice, one can use the free field lattice propagator \begin{equation}
+\braket{\phi(x)\phi(0)} = \int_{- \pi}^{\pi} \dfrac{d^2p}{(2 \pi)^2}  \dfrac{e^{i px}}{\hat p^2 +m^2} \,.
+\end{equation} We have added a mass, otherwise the propagator is also infrared divergent. We expect anyway a conformal like behavior in a region \begin{equation}
+\dfrac{x}{a} << \dfrac{1}{ma} \,,
+\end{equation} here we have explicitated the lattice spacing $a$. One can use a computational algebra software to verify, via numerical integration, that this is the case, and correlation functions behave as $|x/a|^{-2 \alpha^2}$.
+
+In principle, this procedure can be used even in Sinh-Gordon case, with the addiction of a fictious mass term, in order to detect a conformal like behavior at the self dual point. In case it is detected, spectroscopy with standard lattice techniques cease to be useful for that case.
 
 \end{appendices}
 
